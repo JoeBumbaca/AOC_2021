@@ -4,7 +4,7 @@ let input = text.split('\n').map(el => { return parseInt(el) });
 
 // Part 1
 
-const largerThanPrev = function(data) {
+const numLargerThanPrev = function(data) {
   
   let count = 0;
 
@@ -19,7 +19,7 @@ const largerThanPrev = function(data) {
   return count;
 }
 
-// console.log(largerThanPrev(input));
+// console.log(numLargerThanPrev(input));
 
 // Part 2
 // const arr = [199, 200, 208, 210, 200, 207, 240, 269, 260, 263];
@@ -50,4 +50,4 @@ const threeSumIncrease = function(data) {
   return count;
 };
 
-console.log(threeSumIncrease(input));
+// console.log(threeSumIncrease(input));
