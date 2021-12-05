@@ -35,3 +35,54 @@ const powerConsumption = (data) => {
 };
 
 // console.log(powerConsumption(input));
+
+// Part 2
+
+const o2Rating = (data, idx) => {
+  const counts = {1: 0, 0: 0};
+  let newData;
+    data.forEach(datum => {
+      datum[idx] === '0' ? counts[0] += 1 : counts[1] += 1;
+  })
+  if (counts[0] > counts[1]) {
+    newData = data.filter(datum => {
+      return datum[idx] === '0';
+    })
+  } else {
+    newData = data.filter(datum => {
+      return datum[idx] === '1';
+    })
+  }
+
+  if (newData.length > 1) {
+    o2Rating(newData, (idx + 1));
+  } else {
+    console.log(parseInt(newData[0], 2))
+  }
+};
+
+const cO2Rating = (data, idx) => {
+  const counts = {1: 0, 0: 0};
+  let newData;
+    data.forEach(datum => {
+      datum[idx] === '0' ? counts[0] += 1 : counts[1] += 1;
+  })
+  if (counts[0] > counts[1]) {
+    newData = data.filter(datum => {
+      return datum[idx] === '1';
+    })
+  } else {
+     newData = data.filter(datum => {
+      return datum[idx] === '0'
+    })
+  }
+
+  if (newData.length > 1) {
+    cO2Rating(newData, (idx + 1));
+  } else {
+    console.log(parseInt(newData[0], 2))
+  }
+};
+
+// console.log(1599 * 3716);
+
