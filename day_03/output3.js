@@ -55,9 +55,9 @@ const o2Rating = (data, idx) => {
   }
 
   if (newData.length > 1) {
-    o2Rating(newData, (idx + 1));
+    return o2Rating(newData, (idx + 1));
   } else {
-    console.log(parseInt(newData[0], 2))
+    return parseInt(newData[0], 2);
   }
 };
 
@@ -78,11 +78,13 @@ const cO2Rating = (data, idx) => {
   }
 
   if (newData.length > 1) {
-    cO2Rating(newData, (idx + 1));
+    return cO2Rating(newData, (idx + 1));
   } else {
-    console.log(parseInt(newData[0], 2))
+    return parseInt(newData[0], 2);
   }
 };
 
-// console.log(1599 * 3716);
+const lifeSupportRating = (o2Rating(input, 0) * cO2Rating(input, 0));
+// console.log(lifeSupportRating);
+
 
